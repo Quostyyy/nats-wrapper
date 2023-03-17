@@ -1,4 +1,4 @@
-# Example Java mongodb-wrapper
+# Example Java nats-wrapper
 
 ---
 
