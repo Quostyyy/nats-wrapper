@@ -5,6 +5,7 @@ public abstract class NatsListener<T extends NatsPacket> {
 
     private final String channel;
     private final Class<T> packet;
+
     public abstract void onReceive(T packet, String replyTo);
 
     public NatsListener(String channel, Class<T> packet) {

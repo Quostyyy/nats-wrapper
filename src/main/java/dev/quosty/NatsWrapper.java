@@ -11,7 +11,6 @@ import io.nats.client.Message;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.UUID;
 
 public class NatsWrapper implements NatsPacketHandler {
 
@@ -30,10 +29,6 @@ public class NatsWrapper implements NatsPacketHandler {
                 receivedPacket = (NatsPacket) NatsSerialization.deserialize(message.getData());
             } catch (IOException | ClassNotFoundException exception) {
                 throw new RuntimeException(exception);
-            }
-
-            if (receivedPacket.getSender().equals(UUID.randomUUID().toString().split("-")[0])) {
-                return;
             }
 
             if (!receivedPacket.getClass().isAssignableFrom(listener.getPacket())) {
