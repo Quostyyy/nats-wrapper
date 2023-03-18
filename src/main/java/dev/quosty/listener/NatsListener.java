@@ -14,10 +14,10 @@ public abstract class NatsListener<T extends NatsPacket> {
     }
 
     public String getChannel() {
-        return channel;
+        return this.channel;
     }
 
     public Class<T> getPacket() {
-        return packet;
+        return this.packet;
     }
 }

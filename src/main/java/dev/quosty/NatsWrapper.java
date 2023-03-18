@@ -15,6 +15,7 @@ import java.time.Duration;
 public class NatsWrapper implements NatsPacketHandler {
 
     private final Connection connection;
+
     public NatsWrapper(Connection connection) {
         this.connection = connection;
     }
@@ -81,6 +82,6 @@ public class NatsWrapper implements NatsPacketHandler {
     }
 
     public Connection getConnection() {
-        return connection;
+        return this.connection;
     }
 }
